@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Consultando festivos</h1>
+<div mat-dialog-content>
+  <p>{{ datos.encabezado }}</p>
+
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      placeholder="Selecciona una fecha"
+      [(ngModel)]="datos.selectedDate"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="datos"
+    cdkFocusInitial
+  >
+    Aceptar
+  </button>
+</div>
